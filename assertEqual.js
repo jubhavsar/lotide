@@ -1,24 +1,15 @@
 // FUNCTION IMPLEMENTATION
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
+    let code = String.fromCodePoint(9989);
     console.log(
-      String.fromCodePoint(9989) +
-        String.fromCodePoint(9989) +
-        String.fromCodePoint(9989) +
-        "Assertion Passed: " +
-        actual +
-        " === " +
-        expected
+      `${code}${code}${code}Assertion Passed: ${actual} === ${expected}`
     );
   } else {
+    let code = String.fromCodePoint(10062);
+
     console.log(
-      String.fromCodePoint(10062) +
-        String.fromCodePoint(10062) +
-        String.fromCodePoint(10062) +
-        "Assertion failed: " +
-        actual +
-        " !== " +
-        expected
+      `${code}${code}${code}Assertion Passed: ${actual} === ${expected}`
     );
   }
 };
