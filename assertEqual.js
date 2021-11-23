@@ -9,7 +9,7 @@ const assertEqual = function(actual, expected) {
     let code = String.fromCodePoint(10062);
 
     console.log(
-      `${code}${code}${code}Assertion Passed: ${actual} === ${expected}`
+      `${code}${code}${code}Assertion Failed: ${actual} !== ${expected}`
     );
   }
 };
