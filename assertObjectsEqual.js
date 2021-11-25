@@ -1,20 +1,27 @@
 const eqObjects = (object1, object2) => {
   let keysOfObj1 = Object.keys(object1);
   let keysOfObj2 = Object.keys(object2);
-
+  console.log(keysOfObj1);
   if (keysOfObj1.length !== keysOfObj2.length) {
     return false;
   }
 
-  for (const key in object1) {
-    if (object1[key] !== object2[key]) {
+  for (const key of keysOfObj1) {
+    const object1Value = object1[key];
+    const object2Value = object2[key];
+    console.log(object1Value, object2Value, key);
+
+    if (
+      (Array.isArray(object1Value) &&
+        object1Value.length !== object2Value.length) ||
+      (!Array.isArray(object1Value) && object1Value !== object2Value)
+    ) {
       return false;
-    } else {
-      return true;
     }
   }
+  return true;
 };
-const assertObjectsEqual = function(actual, expected) {
+const assertObjectsEqual = function (actual, expected) {
   const inspect = require("util").inspect;
   if (actual === expected) {
     console.log(
@@ -32,5 +39,5 @@ const dc = { d: ["2", 3], c: "1" };
 assertObjectsEqual(eqObjects(cd, dc), true); // => true
 
 const cd2 = { c: "1", d: ["2", 3, 4] };
-//eqobjects should be false but here true why
 assertObjectsEqual(eqObjects(cd, cd2), false); // => false
+console.log(eqObjects(cd, cd2));
