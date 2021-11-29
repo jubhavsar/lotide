@@ -11,4 +11,7 @@ describe("#Test cases for function", () => {
   it("Return 'Hello' for ['Hello','Lighthouse', 'Labs']", function () {
     assert.strictEqual(head(["Hello", "Lighthouse", "Labs"]), "Hello");
   });
+  it("returns undefined for []", () => {
+    assert.strictEqual(head([]), undefined);
+  });
 });
