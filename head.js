@@ -1,18 +1,5 @@
 // FUNCTION IMPLEMENTATION
-const assertEqual = (actual, expected) => {
-  if (actual === expected) {
-    let code = String.fromCodePoint(9989);
-    console.log(
-      `${code}${code}${code}Assertion Passed: ${actual} === ${expected}`
-    );
-  } else {
-    let code = String.fromCodePoint(10062);
-
-    console.log(
-      `${code}${code}${code}Assertion Failed: ${actual} === ${expected}`
-    );
-  }
-};
+const assertEqual = require('./assertEqual')
 const head = (array) => {
   if (array.length === 0) {
     return undefined;
@@ -22,10 +9,5 @@ const head = (array) => {
     return array[0];
   }
 };
+module.exports = head;
 
-//debugger;
-// TEST CODE
-assertEqual(head([5, 6, 7]), 5);
-assertEqual(head(["Hello", "Lighthouse", "Labs"]), "Hello");
-assertEqual(head([5, 2], 6, 7), 5);
-s
