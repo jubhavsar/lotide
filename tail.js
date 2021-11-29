@@ -14,6 +14,9 @@ const assertEqual = function (actual, expected) {
   }
 };
 const tail = (words) => {
+  if(words.length === 0){
+    return undefined;
+  }
   let tailOfWords = [];
   for (let i = 0; i < words.length; i++) {
     if (i > 0) {

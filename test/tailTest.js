@@ -13,4 +13,7 @@ describe("#Test cases for function", () => {
       "Labs",
     ]);
   });
+  it("returns undefined for []", () => {
+    assert.deepEqual(tail([]), undefined);
+  });
 });
